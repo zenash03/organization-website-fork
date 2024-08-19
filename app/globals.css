@@ -4,15 +4,24 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --background-start-rgb: 240,240,240;
   --background-end-rgb: 255, 255, 255;
+  --primary-color: #2E4D20;
+  --secondary-color: #F5A740;
+  --light-secondary-color: #F5BC3B;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+@layer base {
+  html {
+    font-family: 'Poppins', sans-serif;
   }
 }
 
@@ -26,8 +35,43 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@layer components {
+  .topbar {
+    @apply top-0 z-30 flex w-full items-center justify-between bg-white px-6 py-3;
+  }
+  
+  .container {
+    @apply max-w-[1280px] px-2 mx-auto;
+  }
+  
+  .main-container {
+    @apply flex flex-1 sm:max-w-[80vw] w-screen sm:mx-auto sm:px-0 px-6 md:pt-12 pt-10 pb-6;
+  }
+  
+  .hero{
+    @apply md:space-y-8 space-y-4 flex-col items-center;
+  }
+  
+  .main-button {
+    @apply border-white md:text-lg sm:text-sm text-xs border-2 text-white px-6 py-3 rounded-3xl transition-all;
+  }
+  
+  .main-button:hover{
+    @apply bg-white text-black;
+  }
+  
+  .section-head {
+    @apply lg:text-2xl;
+  }
+  
+  .card {
+    @apply rounded-md shadow-2xl;
+  }  
 }
