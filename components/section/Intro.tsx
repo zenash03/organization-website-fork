@@ -27,7 +27,7 @@ const Intro = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-6 lg:gap-y-0 justify-between">
                 <div className="flex flex-col gap-y-6">
                     <h2 className="text-2xl lg:text-3xl uppercase font-bold text-primary">{intro.title}</h2>
-                    <p className="text-sm lg:text-base font-semibold text-primary leading-7">{intro.description}</p>
+                    <p className="text-sm lg:text-base font-semibold text-primary leading-6">{intro.description}</p>
                 </div>
                 {
                     image && (

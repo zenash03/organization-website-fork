@@ -6,7 +6,10 @@ import { usePathname } from "next/navigation";
 import libs from "@/libs/index"; // contoh cara pemanggilan function yang ada di file index di folder libs
 import { useState } from "react";
 
-export default function Navbar() {
+interface NavbarProps {
+    className?: string;
+}
+export default function Navbar({className}: NavbarProps) {
     const [isOpen, setIsOpen] = useState(false);
     const path = usePathname();
     const isEmpty = libs.isEmptyObject(navbarLinks); // cara penggunaan function, kalau misal ada kurang silhkan ditambah sendiri
@@ -16,9 +19,10 @@ export default function Navbar() {
       };
 
     return (
-        <nav className={
-            `w-full text-gray-700 bg-white font-poppins`
-            }>
+        <nav className={libs.cn(
+            `w-full text-gray-700 bg-white font-poppins shadow-lg`,
+            className
+            )}>
             <div className="flex flex-col max-w-screen-xl mx-auto md:items-center md:justify-between md:flex-row md:px-2 lg:px-4 px-10">
                 <div className="flex flex-row items-center justify-between py-4">
                     <a href="/">
