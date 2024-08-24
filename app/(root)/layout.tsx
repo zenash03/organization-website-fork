@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "../globals.css";
 import Topbar from "@/components/Topbar";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 const poppins = Poppins({
     subsets: ['latin'],
@@ -24,9 +25,12 @@ export default function RootLayout({
     return (
         <html lang="en">
             <link rel="shortcut icon" href="/icon-sarang-semut.ico" type="image/x-icon" />
-            <body className={poppins.variable}>
-                <Topbar />
-                <div className="min-h-screen">{children}</div>
+            <body className={`${poppins.variable} font-poppins`}>
+                {/* <Topbar /> */}
+                <Navbar />
+                <div className="min-h-screen">
+                    {children}
+                </div>
                 <Footer />
             </body>
         </html>

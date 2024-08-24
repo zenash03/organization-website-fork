@@ -1,3 +1,4 @@
+import { Poppins } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -18,10 +19,13 @@ const config: Config = {
       colors: {
         "primary": "var(--primary-color)",
         "secondary": "var(--secondary-color)",
-        "light-secondary": "var(--light-secondary-color)"
+        "light-secondary": "var(--light-secondary-color)",
       },
       screens: {
         "xs": "420px"
+      },
+      fontFamily: {
+        poppins: "['var(--font-poppins))']" 
       }
     },
   },
