@@ -25,9 +25,11 @@ export default function RootLayout({
     return (
         <html lang="en">
             <link rel="shortcut icon" href="/icon-sarang-semut.ico" type="image/x-icon" />
-            <body className={`${poppins.variable} font-poppins overflow-x-hidden`}>
+            <body className={`${poppins.variable} font-poppins overflow-x-hidden overscroll-none`}>
                 {/* <Topbar /> */}
-                <Navbar />
+                <div className="sticky h-full top-0 w-full">
+                    <Navbar />
+                </div>
                 <div className="min-h-screen">
                     {children}
                 </div>

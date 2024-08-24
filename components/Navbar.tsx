@@ -16,8 +16,10 @@ export default function Navbar() {
       };
 
     return (
-        <nav className="w-full text-gray-700 bg-white font-poppins">
-            <div className="flex flex-col max-w-screen-xl mx-auto md:items-center md:justify-between md:flex-row md:px-2 lg:px-4">
+        <nav className={
+            `w-full text-gray-700 bg-white font-poppins`
+            }>
+            <div className="flex flex-col max-w-screen-xl mx-auto md:items-center md:justify-between md:flex-row md:px-2 lg:px-4 px-10">
                 <div className="flex flex-row items-center justify-between py-4">
                     <a href="/">
                         <img className="w-12" src="/assets/img/logo-sarang-semut.webp" alt="Logo UKM" />

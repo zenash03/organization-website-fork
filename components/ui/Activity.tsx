@@ -21,11 +21,11 @@ function ActivityGrid({
     children,
     className,
     title = "Kegiatan",
-    gridClassName = "grid-cols-3 gap-8"
+    gridClassName = "grid-cols-1 gap-8 lg:grid-cols-3"
 }:ActivityGridProps): JSX.Element {
     return (
         <div className={libs.cn(
-            `max-w-screen-xl mx-auto flex flex-col gap-y-8`,
+            `max-w-screen-xl mx-auto flex flex-col gap-y-8 px-8 lg:px-0`,
             className)
         }>
             <h2 className="text-2xl text-primary font-semibold">{title}</h2>
