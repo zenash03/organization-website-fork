@@ -1,6 +1,5 @@
-import { ActivityWithTabs } from "@/components/section/ActivityTabs";
+import ActivityWithTabs from "@/components/section/ActivityWithTabs";
 import Intro from "@/components/section/Intro";
-import Tabmenu from "@/components/Tabmenu";
 
 export default function DivisiPage() {
 
