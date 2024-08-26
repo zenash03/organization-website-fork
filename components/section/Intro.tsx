@@ -23,11 +23,11 @@ const Intro = () => {
 
   return (
     <div className="bg-stone-200">
-        <div className="max-w-screen-xl min-w-96 flex flex-col md:items-center mx-auto py-12 pb-16 px-10 lg:px-0">
+        <div className="container flex flex-col md:items-center py-12 pb-16 ">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-6 lg:gap-y-0 justify-between">
                 <div className="flex flex-col gap-y-6">
                     <h2 className="text-2xl lg:text-3xl uppercase font-bold text-primary">{intro.title}</h2>
-                    <p className="text-sm lg:text-base font-semibold text-primary leading-6">{intro.description}</p>
+                    <p className="text-sm lg:text-base font-semibold text-primary leading-6 text-justify">{intro.description}</p>
                 </div>
                 {
                     image && (

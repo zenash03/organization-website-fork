@@ -146,7 +146,7 @@ function ActivityWithTabs() {
     return (
         <div>
             <div className="bg-stone-200 mb-8">
-                <div className="max-w-screen-xl min-w-96 flex flex-col md:items-center mx-auto py-4 px-8 lg:px-0">
+                <div className="container flex flex-col md:items-center py-4">
                     <div className="flex gap-8 flex-wrap w-full">
                         {
                             divisions?.map((div) => {
