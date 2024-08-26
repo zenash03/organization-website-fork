@@ -48,7 +48,7 @@ body {
   }
   
   .container {
-    @apply max-w-[1280px] px-2 mx-auto;
+    @apply max-w-[1280px] xl:px-0 px-4 mx-auto;
   }
   
   .main-container {
