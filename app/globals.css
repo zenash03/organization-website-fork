@@ -20,9 +20,9 @@
 } */
 
 @layer base {
-  html {
+  /* html {
     font-family: 'Poppins', sans-serif;
-  }
+  } */
 }
 
 body {

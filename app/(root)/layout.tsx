@@ -7,7 +7,6 @@ import Navbar from "@/components/Navbar";
 
 const poppins = Poppins({
     subsets: ['latin'],
-    display: 'swap',
     variable: '--font-poppins',
     weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
 });
@@ -25,9 +24,9 @@ export default function RootLayout({
     return (
         <html lang="en">
             <link rel="shortcut icon" href="/icon-sarang-semut.ico" type="image/x-icon" />
-            <body className={`${poppins.variable} font-poppins overflow-x-hidden overscroll-none`}>
+            <body className={`${poppins.variable} font-poppins overflow-x-hidden overscroll-none bg-white`}>
                 {/* <Topbar /> */}
-                <div className="sticky top-0 w-full h-20">
+                <div className="sticky top-0 w-full h-20 z-30">
                     <Navbar className="absolute"/>
                 </div>
                 <div className="min-h-screen">
