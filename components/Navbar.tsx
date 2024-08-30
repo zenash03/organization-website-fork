@@ -20,7 +20,7 @@ export default function Navbar({className}: NavbarProps) {
 
     return (
         <nav className={libs.cn(
-            `w-full text-gray-700 bg-white font-poppins shadow-lg`,
+            `w-full text-gray-700 bg-white font-poppins shadow-md`,
             className
             )}>
             <div className="flex flex-col max-w-screen-xl mx-auto md:items-center md:justify-between md:flex-row md:px-2 lg:px-4 px-10">
@@ -61,6 +61,7 @@ export default function Navbar({className}: NavbarProps) {
                                     px-4 py-4 mt-2 text-base font-normal rounded-sm hover:text-primary focus:text-primary hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:shadow-outline ${isActive && "bg-gray-100"}`
                                 }
                                 href={link.route}
+                                onClick={toggleMenu}
                             >
                                 {link.label}
                             </Link>

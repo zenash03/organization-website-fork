@@ -25,7 +25,7 @@ const config: Config = {
         "xs": "420px"
       },
       fontFamily: {
-        poppins: "['var(--font-poppins))']" 
+        poppins: ['var(--font-poppins)'] 
       }
     },
   },
