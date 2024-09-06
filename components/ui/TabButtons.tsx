@@ -1,4 +1,4 @@
-import libs from '@/libs';
+import { cn } from '@/lib/utils';
 import React from 'react'
 
 interface TabButtonsProps {
@@ -19,7 +19,7 @@ function TabButtons({
                 return (
                     <button
                         className={
-                            libs.cn(
+                            cn(
                                 `text-lg font-semibold text-primary opacity-40`,
                                 activeTabId === div.id ? 'opacity-100' : ''
                             )}

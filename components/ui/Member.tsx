@@ -1,5 +1,5 @@
 "use client"
-import libs from '@/libs';
+import { cn } from '@/lib/utils';
 import React, { ReactNode, useEffect, useState } from 'react'
 
 interface MemberGridProps {
@@ -23,12 +23,12 @@ function MemberGrid({
     gridClassName = "grid-cols-2 gap-8 lg:grid-cols-4 sm:grid-cols-2"
 }: MemberGridProps): JSX.Element {
     return (
-        <div className={libs.cn(
+        <div className={cn(
             `container flex flex-col gap-y-10 my-10`,
             className
         )}>
             <h2 className="text-2xl text-primary font-semibold">{title}</h2>
-            <div className={libs.cn(
+            <div className={cn(
                 `grid`,
                 gridClassName
             )}>

@@ -1,4 +1,4 @@
-import libs from '@/libs';
+import { cn } from '@/lib/utils';
 import React, { ReactNode, useEffect, useState } from 'react'
 import Modal from './Modal';
 
@@ -26,7 +26,7 @@ function Gallery({
         <div className="container flex flex-col gap-y-6 lg:gap-y-8">
             <h2 className="text-xl lg:text-2xl text-primary font-semibold">{title}</h2>
             <div className={
-                libs.cn(
+                cn(
                     `grid`,
                     gridClassName
                 )}>
@@ -61,7 +61,7 @@ function GalleryCard({
 
     return (
         <>
-            <div key={id} className={libs.cn(
+            <div key={id} className={cn(
                 `w-full h-64 md:h-80 bg-slate-300 rounded-lg shadow-md border border-gray-100 overflow-hidden`,
                 className
             )} onClick={handleCardClick}>

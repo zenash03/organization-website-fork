@@ -3,11 +3,11 @@
 import { navbarLinks } from "@/constants/index";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import libs from "@/libs/index"; // contoh cara pemanggilan function yang ada di file index di folder libs
+import { isEmptyObject } from "@/lib/utils" // contoh cara pemanggilan function yang ada di file index di folder libs
 
 export default function Topbar() {
     const path = usePathname();
-    const isEmpty = libs.isEmptyObject(navbarLinks); // cara penggunaan function, kalau misal ada kurang silhkan ditambah sendiri
+    const isEmpty = isEmptyObject(navbarLinks); // cara penggunaan function, kalau misal ada kurang silhkan ditambah sendiri
     
     return (
         <nav className="topbar">
