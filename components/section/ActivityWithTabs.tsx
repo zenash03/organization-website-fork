@@ -2,7 +2,6 @@
 
 import { act, useState } from "react"
 import { ActivityCard, ActivityGrid } from "../ui/Activity"
-import libs from "@/libs"
 import TabButtons from "../ui/TabButtons";
 
 interface ActivityWithTabsProps {

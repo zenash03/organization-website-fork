@@ -1,7 +1,7 @@
 "use client"
 
 import { ReactNode, useState } from "react"
-import libs from "@/libs"
+import { cn } from "@/lib/utils"
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -27,12 +27,12 @@ function ActivityGrid({
     gridClassName = "grid-cols-1 gap-8 lg:grid-cols-3 sm:grid-cols-2"
 }:ActivityGridProps): JSX.Element {
     return (
-        <div className={libs.cn(
+        <div className={cn(
             `container flex flex-col gap-y-6 lg:gap-y-8`,
             className)
         }>
             <h2 className="text-xl lg:text-2xl text-primary font-semibold">{title}</h2>
-            <div className={libs.cn(
+            <div className={cn(
                 `grid`,
                 gridClassName
             )}>

@@ -3,7 +3,7 @@
 import { navbarLinks } from "@/constants/index";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import libs from "@/libs/index"; // contoh cara pemanggilan function yang ada di file index di folder libs
+import { isEmptyObject, cn } from "@/lib/utils"; // contoh cara pemanggilan function yang ada di file index di folder libs
 import { useState } from "react";
 
 interface NavbarProps {
@@ -12,14 +12,14 @@ interface NavbarProps {
 export default function Navbar({className}: NavbarProps) {
     const [isOpen, setIsOpen] = useState(false);
     const path = usePathname();
-    const isEmpty = libs.isEmptyObject(navbarLinks); // cara penggunaan function, kalau misal ada kurang silhkan ditambah sendiri
+    const isEmpty = isEmptyObject(navbarLinks); // cara penggunaan function, kalau misal ada kurang silhkan ditambah sendiri
     
     const toggleMenu = () => {
         setIsOpen(!isOpen);
       };
 
     return (
-        <nav className={libs.cn(
+        <nav className={cn(
             `w-full text-gray-700 bg-white font-poppins shadow-md`,
             className
             )}>
