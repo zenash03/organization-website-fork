@@ -1,8 +1,9 @@
 "use client"
 
 import { act, useState } from "react"
-import { ActivityCard, ActivityGrid } from "../ui/Activity"
+import { ActivityCard } from "../ui/Cards/Activity"
 import TabButtons from "../ui/TabButtons";
+import Grid from "../ui/Grid";
 
 interface ActivityWithTabsProps {
     divisions: any[];
@@ -16,7 +17,7 @@ function ActivityWithTabs({divisions, activities}: ActivityWithTabsProps) {
 
     return (
         <div>
-            <div className="bg-stone-200 mb-8">
+            <div className="bg-stone-100 mb-8">
                 <div className="container flex flex-col md:items-center py-4">
                     <TabButtons 
                         divisions={divisions}
@@ -25,19 +26,26 @@ function ActivityWithTabs({divisions, activities}: ActivityWithTabsProps) {
                     />
                 </div>
             </div>
-            <ActivityGrid>
-                {filterActivityByDivision.map((activity) => {
-                    return (
-                        <ActivityCard 
-                            id={activity.id}
-                            date={activity.date}
-                            title={activity.title}
-                            description={activity.description}
-                            slug={activity.slug}
-                        />
-                    )
-                })}
-            </ActivityGrid>
+            <Grid
+                containerClassName="gap-y-6 lg:gap-y-8"
+                gridClassName="grid-cols-1 gap-8 lg:grid-cols-3 sm:grid-cols-2"
+                title="Kegiatan"
+                titleClassName=""
+            >
+                {
+                    filterActivityByDivision.map((activity) => {
+                        return (
+                            <ActivityCard 
+                                id={activity.id}
+                                date={activity.date}
+                                title={activity.title}
+                                description={activity.description}
+                                slug={activity.slug}
+                            />
+                        )
+                    })
+                }
+            </Grid>
         </div>
     )
 }

@@ -1,13 +1,7 @@
 import { cn } from '@/lib/utils';
 import React, { ReactNode, useEffect, useState } from 'react'
-import Modal from './Modal';
+import GalleryModal from '../Modals/GalleryModal';
 
-interface GalleryProps {
-    children: ReactNode;
-    className?: string;
-    title?: string;
-    gridClassName?: string;
-}
 interface GalleryCardProps {
     id: number;
     name: string;
@@ -15,27 +9,6 @@ interface GalleryCardProps {
     description?: string;
     className?: string;
 }
-
-function Gallery({
-    children,
-    className,
-    title = "Galeri",
-    gridClassName = "grid-cols-1 gap-8 lg:grid-cols-4 sm:grid-cols-2"
-} : GalleryProps) {
-    return (
-        <div className="container flex flex-col gap-y-6 lg:gap-y-8">
-            <h2 className="text-xl lg:text-2xl text-primary font-semibold">{title}</h2>
-            <div className={
-                cn(
-                    `grid`,
-                    gridClassName
-                )}>
-                {children}
-            </div>
-        </div>
-    )
-}
-
 function GalleryCard({
     id,
     name,
@@ -62,20 +35,22 @@ function GalleryCard({
     return (
         <>
             <div key={id} className={cn(
-                `w-full h-64 md:h-80 bg-slate-300 rounded-lg shadow-md border border-gray-100 overflow-hidden`,
+                `aspect-video bg-slate-300 rounded-lg shadow-md border border-gray-100 overflow-hidden`,
                 className
             )} onClick={handleCardClick}>
                 {
-                    image && (
+                    image? (
                         <img src={image} alt="" 
-                            className='w-full h-full object-cover rounded-lg hover:scale-110 transition-all duration-500 cursor-pointer'
+                            className='aspect-video object-cover rounded-lg hover:scale-110 transition-all duration-500 cursor-pointer'
                         />
+                    ) : (
+                        <div></div>
                     )
                 }
             </div>
             {
                 isModalOpen && (
-                    <Modal
+                    <GalleryModal
                         isOpen={isModalOpen}
                         onClose={handleCloseModal}
                         name={name}
@@ -89,4 +64,4 @@ function GalleryCard({
 }
 
 
-export { Gallery, GalleryCard }
+export { GalleryCard }

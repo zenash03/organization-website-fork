@@ -3,7 +3,8 @@ import React from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { activities, activityDocumentations } from '@/data/dummyData'
 import Intro from '@/components/section/Intro'
-import { Gallery, GalleryCard } from '@/components/ui/Gallery'
+import { GalleryCard } from '@/components/ui/Cards/Gallery'
+import Grid from '@/components/ui/Grid'
 
 const ActivityDetail = () => {
     const router = useRouter();
@@ -21,11 +22,14 @@ const ActivityDetail = () => {
 
     return (
         <div>
-            <Intro image_link={activity.image_link} title={activity.title} description={activity.description} imageCol={1} textCol={2} key={activity.id} />
+            <Intro image_link={activity.image_link} title={activity.title} description={activity.description} imageCol={1} key={activity.id} />
 
             { (galleryData.length > 0) && (
                 <div className="my-8 mb-24">
-                    <Gallery>
+                    <Grid
+                        title="Galeri"
+                        
+                    >
                         {
                             galleryData.map((photo) => {
                                 return (
@@ -36,13 +40,13 @@ const ActivityDetail = () => {
                                         className=''
                                         image_link={photo.image_link}
                                     />
-
                                 )
                             })
                         }
-                    </Gallery>
+                    </Grid>
                 </div>
-            )}
+            )   
+            }
         </div>
     )
 }

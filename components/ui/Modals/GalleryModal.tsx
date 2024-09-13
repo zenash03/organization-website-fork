@@ -9,7 +9,7 @@ interface ModalProps {
     description?: string;
 }
 
-const Modal: React.FC<ModalProps> = ({
+const GalleryModal: React.FC<ModalProps> = ({
     isOpen, onClose, image_link, name, description
 }) => {
     const [image, setImage] = useState<string | null>(null);
@@ -22,7 +22,7 @@ const Modal: React.FC<ModalProps> = ({
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50 p-4 lg:p-0">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4 lg:p-0">
             <div className="bg-white rounded-lg shadow-lg p-4 lg:max-w-2xl w-full divide-y">
                 <div className="flex justify-between py-2">
                     <h2 className="font-semibold text-primary text-lg">Photo</h2>
@@ -47,4 +47,4 @@ const Modal: React.FC<ModalProps> = ({
     )
 }
 
-export default Modal
+export default GalleryModal

@@ -25,7 +25,7 @@ export default function RootLayout({
         <html lang="en">
             <body className={`${poppins.variable} font-poppins overflow-x-hidden overscroll-none bg-white`}>
                 {/* <Topbar /> */}
-                <div className="sticky top-0 w-full h-20 z-30">
+                <div className="sticky top-0 w-full h-20 z-20">
                     <Navbar className="absolute"/>
                 </div>
                 <div className="min-h-screen">

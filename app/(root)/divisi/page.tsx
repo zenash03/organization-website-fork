@@ -13,9 +13,9 @@ export default function DivisiPage() {
     return (
     <div className="w-full">
       <Intro 
-        {...introProps} containerClassName="bg-stone-200"
+        {...introProps} containerClassName="bg-stone-100"
       />
-      <div className="my-8">
+      <div className="my-8 mb-48">
         <ActivityWithTabs divisions={divisions} activities={activities} />
       </div>
     </div>
