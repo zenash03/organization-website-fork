@@ -1,9 +1,10 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "../globals.css";
-import Topbar from "@/components/Topbar";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import Loading from "./loading";
 
 const poppins = Poppins({
     subsets: ['latin'],
@@ -25,13 +26,15 @@ export default function RootLayout({
         <html lang="en">
             <body className={`${poppins.variable} font-poppins overflow-x-hidden overscroll-none bg-white`}>
                 {/* <Topbar /> */}
-                <div className="sticky top-0 w-full h-20 z-20">
-                    <Navbar className="absolute"/>
-                </div>
-                <div className="min-h-screen">
-                    {children}
-                </div>
-                <Footer />
+                <Suspense fallback={<Loading />}>
+                    <div className="sticky top-0 w-full h-20 z-20">
+                        <Navbar className="absolute"/>
+                    </div>
+                    <div className="min-h-screen">
+                        {children}
+                    </div>
+                    <Footer />
+                </Suspense>
             </body>
         </html>
     );
