@@ -1,5 +1,6 @@
 import Intro from "@/components/section/Intro";
-import { MemberCard, MemberGrid } from "@/components/ui/Member";
+import Grid from "@/components/ui/Grid";
+import { MemberCard } from "@/components/ui/Cards/Member";
 
 export default function TentangKamiPage() {
 	const introProps = {
@@ -42,7 +43,12 @@ export default function TentangKamiPage() {
 	<div>
 		<Intro {...introProps} containerClassName="bg-white" />
 
-		<MemberGrid className="mb-48">
+
+		<Grid 
+			containerClassName="pb-48" 
+			title="Anggota Inti"
+			gridClassName="grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6"
+		>
 			{
 				memberProps.members.map((value) => {
 					return (
@@ -50,7 +56,7 @@ export default function TentangKamiPage() {
 					)
 				})
 			}
-		</MemberGrid>	
+		</Grid>
 	</div>
 	);
 }
