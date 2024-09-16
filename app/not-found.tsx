@@ -1,9 +1,10 @@
-"use client";
+import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { redirect } from "next/navigation";
 
-import { useRouter } from "next/navigation";
-
-export default function NotFound() {
-  const router = useRouter();
+export default async function NotFound() {
+  const supabase = createSupabaseServerClient();
+  const { data } = await supabase.auth.getSession();
   
-  return router.replace("/");
+  if(data?.session) return redirect("/admin");
+  return redirect("/");
 }

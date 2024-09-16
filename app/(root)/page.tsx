@@ -1,7 +1,11 @@
-import Topbar from "@/components/Topbar";
+"use client";
 
-export default function Home() {
+import { supabase } from "@/lib/supabase/client";
+import { useRouter } from "next/navigation";
 
+export default async function Home() {
+    
+    
     return (
         <>
             Coba
