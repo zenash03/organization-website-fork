@@ -1,6 +1,8 @@
+import Sidebar from "@/components/admin/Sidebar";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "../globals.css";
+import Topbar from "@/components/admin/Topbar";
 
 const poppins = Poppins({
     subsets: ['latin'],
@@ -9,21 +11,26 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-    title: "UKM Sarang Semut",
+    title: "Admin | UKM Sarang Semut",
     description: "unit Kegiatan Mahasiswa Sarang Semut berasal dari Universitas Tanjungpura Pontianak.",
 };
-
-export default function RootLayout({
+export default function AdminLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    
     return (
         <html lang="en">
             <link rel="shortcut icon" href="/icon-sarang-semut.ico" type="image/x-icon" />
             <body className={`${poppins.variable} font-poppins overflow-x-hidden overscroll-none bg-white`}>
-                <div className="min-h-screen">
-                  {children}
+                <Topbar />
+                <Sidebar />
+                
+                <div className="main-content">
+                    <div className="p-3">
+                        {children}
+                    </div>
                 </div>
             </body>
         </html>

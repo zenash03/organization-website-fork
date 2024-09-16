@@ -16,7 +16,8 @@ const config: Config = {
 				'primary': 'var(--primary-color)'
 			},
 			backgroundColor: {
-				'primary': 'var(--primary-color)'
+				'primary': 'var(--primary-color)',
+				'secondary': 'var(--secondary-color)'
 			},
 			colors: {
 				'light-secondary': 'var(--light-secondary-color)',
@@ -31,8 +32,8 @@ const config: Config = {
 					foreground: 'hsl(var(--popover-foreground))'
 				},
 				primary: {
-					DEFAULT: 'hsl(var(--primary-color))',
-					foreground: 'hsl(var(--primary-foreground))'
+					DEFAULT: 'var(--primary-color)',
+					foreground: 'var(--primary-foreground)'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
