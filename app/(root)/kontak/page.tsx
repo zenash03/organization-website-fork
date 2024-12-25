@@ -1,10 +1,13 @@
 "use client";
+import { InstagramLogo, EnvelopeSimple } from "@phosphor-icons/react";
 import { useRef, useState } from "react";
 
 
 export default function KontakPage() {
   const form = useRef();
 
+  const instagram = "https://instagram.com";
+  const email = "example@gmail.com";
   
   const [errors, setErrors] = useState<{ from_name?: string; reply_to?: string; message?: string }>({});
   const [formValues, setFormValues] = useState({
@@ -51,31 +54,89 @@ export default function KontakPage() {
   }
 
   return (
-    <div className="min-h-screen w-full md:mt-10 py-6 md:py-8 flex flex-col justify-start items-center">
-      <h1 className="text-2xl font-semibold mb-5 text-gray-900">Kontak Kami</h1>
-      <form className="flex flex-col w-full max-w-4xl px-8" onSubmit={handleSubmit}>
-        <input type="text" placeholder="Nama Pengirim" name="from_name" value={formValues.from_name} onChange={handleInputChange} className="font-medium w-full p-4 bg-gray-50 border border-gray-200 rounded-sm outline-gray-300 text-gray-700" />
-        {
-          errors.from_name && <p className="text-red-500 font-semibold text-right">{errors.from_name}</p>
-        }
+    <div className="min-h-screen w-full flex flex-col md:flex-row items-start justify-center p-6 md:p-12 bg-gray-50">
+      <div className="md:w-1/2 w-full md:pr-12">
+        <h1 className="text-4xl font-bold mb-8 text-gray-900">Contact Us</h1>
+        <form className="flex flex-col space-y-4 w-full" onSubmit={handleSubmit}>
+          <div>
+            <input
+              type="text"
+              placeholder="Your Name"
+              name="from_name"
+              value={formValues.from_name}
+              onChange={handleInputChange}
+              className="font-medium w-full p-4 bg-white border border-gray-300 rounded-md outline-none focus:ring-2 focus:ring-primary text-gray-700"
+            />
+            {errors.from_name && (
+              <p className="text-red-500 text-sm mt-1">{errors.from_name}</p>
+            )}
+          </div>
 
-        <input type="email" placeholder="Email Pengirim" name="reply_to" value={formValues.reply_to} onChange={handleInputChange} className="font-medium w-full p-4 mt-4 bg-gray-50 border border-gray-200 rounded-sm outline-gray-300 text-gray-700" />
-        {
-          errors.reply_to && <p className="text-red-500 font-semibold text-right">{errors.reply_to}</p>
-        }
-        <textarea
-          placeholder="Isi Pesan"
-          name="message"
-          value={formValues.message}
-          onChange={(e) => setFormValues({ ...formValues, message: e.target.value })}
-          className="font-medium w-full min-h-40 p-4 mt-4 bg-gray-50 text-gray-700 border border-gray-200 rounded-sm outline-gray-300"
-        >
-        </textarea>
-        {
-          errors.message && <p className="text-red-500 font-semibold text-right">{errors.message}</p>
-        }
-        <button className="text-white p-4 mt-4 bg-primary rounded-md" type="submit" >Send</button>
-      </form>
+          <div>
+            <input
+              type="email"
+              placeholder="Your Email"
+              name="reply_to"
+              value={formValues.reply_to}
+              onChange={handleInputChange}
+              className="font-medium w-full p-4 bg-white border border-gray-300 rounded-md outline-none focus:ring-2 focus:ring-primary text-gray-700"
+            />
+            {errors.reply_to && (
+              <p className="text-red-500 text-sm mt-1">{errors.reply_to}</p>
+            )}
+          </div>
+
+          <div>
+            <textarea
+              placeholder="Your Message"
+              name="message"
+              value={formValues.message}
+              onChange={handleInputChange}
+              className="font-medium w-full p-4 bg-white border border-gray-300 rounded-md outline-none focus:ring-2 focus:ring-primary text-gray-700 resize-none h-40"
+            />
+            {errors.message && (
+              <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+            )}
+          </div>
+
+          <button
+            type="submit"
+            className="text-white font-bold p-4 bg-primary rounded-md hover:bg-primary-dark transition duration-300"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+
+      <div className="md:w-1/2 w-full py-16 md:mt-0">
+        <h5 className="text-2xl font-semibold mb-4 text-gray-900">
+          Alternatively, reach us through:
+        </h5>
+        <div className="flex flex-col space-y-4">
+          {instagram && (
+            <a
+              href={instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-700 hover:text-primary transition duration-300 flex items-center"
+            >
+              <InstagramLogo size={28} className="mr-2" />
+              <span className="text-base">Instagram</span>
+            </a>
+          )}
+          {email && (
+            <a
+              href={`mailto:${email}`}
+              className="text-gray-700 hover:text-primary transition duration-300 flex items-center"
+            >
+              <EnvelopeSimple size={28} className="mr-2" />
+              <span className="text-base">Email</span>
+            </a>
+          )}
+        </div>
+      </div>
     </div>
+
+    
   );
 }
